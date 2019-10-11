@@ -39,6 +39,10 @@ Replacing `<powerline-pills folder>` with the folder that you cloned this reposi
 The configuration file (`config.yml`) has options for you to customize this theme.
 The `left_top`, `right_top` and `left_bottom` configurations under `base` let you configure which pills you want on each part.
 
+- **Added time pill in this fork**
+
 ## Screenshots
 
 ![Screenshot](https://github.com/lucasqueiroz/powerline-pills-zsh/blob/master/screenshots/screenshot.png?raw=true)
+
+

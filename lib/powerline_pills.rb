@@ -17,6 +17,8 @@ config = YAML.load_file(path + '/config.yml')
 
 date_format = config['date']['format']
 cur_date = `date +#{date_format}`.to_s.chomp
+time_format = config['time']['format']
+cur_time = `date +#{time_format}`.to_s.chomp
 config_left_top = config['base']['left_top']
 config_right_top = config['base']['right_top']
 config_left_bottom = config['base']['left_bottom']
@@ -32,6 +34,7 @@ icon_folder = config['folder']['icon']['char']
 icon_branch = config['git']['icon']['char']
 icon_dirty = config['git']['icon']['char_dirty']
 icon_date = config['date']['icon']['char']
+icon_time = config['time']['icon']['char']
 icon_bash = config['cmd']['icon']['char']
 icon_ruby = config['ruby']['icon']['char']
 
@@ -63,6 +66,10 @@ foreground_git = fg_color(config['git']['color'])
 background_date = bg_color(config['date']['background_color'])
 foreground_icon_date = fg_color(config['date']['icon']['color'])
 foreground_date = fg_color(config['date']['color'])
+
+background_time = bg_color(config['time']['background_color'])
+foreground_icon_time = fg_color(config['time']['icon']['color'])
+foreground_time = fg_color(config['time']['color'])
 
 background_cmd_failed = bg_color(config['cmd']['background_color_failed'])
 foreground_cmd_failed = fg_color(config['cmd']['color_failed'])
@@ -96,6 +103,9 @@ git_pill = Pill.new(background_git, foreground_icon_git, icon_branch,
 date_pill = Pill.new(background_date, foreground_icon_date, icon_date,
                      foreground_date, cur_date)
 
+time_pill = Pill.new(background_time, foreground_icon_time, icon_time,
+                     foreground_time, cur_time)
+
 background_cmd = last_exit ? background_cmd_success : background_cmd_failed
 foreground_cmd = last_exit ? foreground_cmd_success : foreground_cmd_failed
 cmd_pill = Pill.new(background_cmd, foreground_cmd, icon_bash)
@@ -106,7 +116,7 @@ ruby_pill = Pill.new(background_ruby, foreground_icon_ruby, icon_ruby,
 
 pill_names = { os: os_pill, user: user_pill, folder: folder_pill,
                git: git_pill, date: date_pill, cmd: cmd_pill,
-               ruby: ruby_pill }
+               ruby: ruby_pill, time: time_pill }
 
 left_top = []
 right_top = []
@@ -142,7 +152,7 @@ str_left_top += left_top[-1].join(powerline_icon_left, powerline_icon_right,
                                   nil, left_top.size == 1)
 
 # RIGHT (TOP)
-str_right_top = ''
+str_right_top = "\u0008".encode('utf-8')
 right_top[0...-1].each_with_index do |r, i|
   str_right_top += r.join(powerline_icon_left, powerline_icon_right,
                           right_top[i + 1], i.zero?)
