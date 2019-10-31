@@ -7,7 +7,7 @@ require_relative 'pill'
 include Util
 
 # VARS
-last_exit = ARGV[0] == '0'
+last_exit = ARGV[0]  == '0'
 username = ENV['USER']
 dir = Dir.pwd
 size = `tput cols`.to_i
@@ -35,7 +35,8 @@ icon_branch = config['git']['icon']['char']
 icon_dirty = config['git']['icon']['char_dirty']
 icon_date = config['date']['icon']['char']
 icon_time = config['time']['icon']['char']
-icon_bash = config['cmd']['icon']['char']
+icon_cmd_success = config['cmd']['icon']['cmd_success']
+icon_cmd_failed = config['cmd']['icon']['cmd_failed']
 icon_ruby = config['ruby']['icon']['char']
 
 # COLORS
@@ -108,7 +109,8 @@ time_pill = Pill.new(background_time, foreground_icon_time, icon_time,
 
 background_cmd = last_exit ? background_cmd_success : background_cmd_failed
 foreground_cmd = last_exit ? foreground_cmd_success : foreground_cmd_failed
-cmd_pill = Pill.new(background_cmd, foreground_cmd, icon_bash)
+icon_cmd       = last_exit ? icon_cmd_success : icon_cmd_failed
+cmd_pill = Pill.new(background_cmd, foreground_cmd, icon_cmd)
 
 
 ruby_pill = Pill.new(background_ruby, foreground_icon_ruby, icon_ruby,

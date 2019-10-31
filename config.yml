@@ -80,9 +80,10 @@ cmd:
   background_color_failed: 198
   color_failed: 255
   background_color_success: 158
-  color_success: 255
+  color_success: 22
   icon:
-    char: '$'
+    cmd_success: '✓'
+    cmd_failed: '×'
 # Ruby version
 ruby:
   background_color: 88
