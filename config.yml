@@ -23,9 +23,9 @@ base:
   powerline_icon_right: ''
   powerline_icon_left: ''
   color: 255
-  left_top: ['os', 'user', 'folder']
+  left_top: ['folder']
   right_top: ['ruby', 'git', 'time']
-  left_bottom: ['cmd']
+  left_bottom: ['user', 'cmd']
 # OS Info
 os:
   background_color: 255
