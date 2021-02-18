@@ -20,8 +20,8 @@
 
 # Base
 base:
-  powerline_icon_right: ''
-  powerline_icon_left: ''
+  powerline_icon_right: '▐' # 
+  powerline_icon_left: '▌' # 
   color: 7
   left_top: ['user', 'folder']
   right_top: ['git', 'time', 'date']
