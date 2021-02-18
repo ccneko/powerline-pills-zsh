@@ -22,72 +22,72 @@
 base:
   powerline_icon_right: ''
   powerline_icon_left: ''
-  color: 255
-  left_top: ['folder']
-  right_top: ['ruby', 'git', 'time']
-  left_bottom: ['user', 'cmd']
+  color: 7
+  left_top: ['user', 'folder']
+  right_top: ['git', 'time', 'date']
+  left_bottom: ['cmd']
 # OS Info
 os:
-  background_color: 255
+  background_color: 7
   color: 0
   icon_linux: '🐧'
-  icon_darwin: ''
+  icon_darwin: '🍎'
 # Username
 user:
-  background_color: 228
-  color: 218
+  background_color: 229
+  color: 211
   icon:
     char: '♥'
-    color: 218
+    color: 211
 # Folder
 folder:
-  background_color: 255
-  color: 8
-  icon:
-    char: '📂'
-    color: 255
-# Git
-git:
-  background_color: 105
-  color: 255
-  icon:
-    # Branch icon
-    char: ''
-    color: 255
-    # Uncommited changes
-    char_dirty: '!'
-    color_dirty: 215
-# Date
-date:
-  background_color: 87
+  background_color: 8
   color: 7
   icon:
-    char: '📅'
+    char: ''
+    color: 7
+# Git
+git:
+  background_color: 189
+  color: 62
+  icon:
+    # Branch icon
+    char: '⑆'
+    color: 62
+    # Uncommited changes
+    char_dirty: '!'
+    color_dirty: 131
+# Date
+date:
+  background_color: 6
+  color: 7
+  icon:
+    char: ''
     color: 7
   # Follows the bash `date` format
   format: '%d/%m/%y'
 # Time
 time:
-  background_color: 87
-  color: 18
+  background_color: 7
+  color: 6
   icon:
-    char: '🕑'
-    color: 18
+    char: ''
+    color: 6
   # Follows the bash `date` format
   format: '%H:%M:%S'
 # CMD
 cmd:
-  background_color_failed: 198
-  color_failed: 255
-  background_color_success: 158
-  color_success: 22
+  background_color_failed: 88
+  color_failed: 7
+  background_color_success: 22
+  color_success: 7
   icon:
-    cmd_success: '✓'
-    cmd_failed: '×'
+    char_success: '✓'
+    char_failed: '✗'
 # Ruby version
 ruby:
-  background_color: 88
-  color: 255
+  background_color: 1
+  color: 7
   icon:
-    char: '💎 '
+    char: ' '
     color: 15
